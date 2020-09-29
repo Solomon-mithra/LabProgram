@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            button{
+                width: 100%;
+                height: 35px;
+                background-color:rgb(27, 181, 253);
+                color: cornsilk;
+                border-radius: 3px;
+                border-left-color: rgb(38, 38, 255);
+                font: 1em sans-serif;
+            }
+            input{
+                height: 30px;
+                border-radius: 3px;
+            }
+        
+        </style>
+        <script>
+            function insert(val){
+                //alert(val);
+                document.getElementById('res').value += val;
+            }
+
+            function clr(){
+                document.getElementById('res').value = '';
+            }
+            function result(){
+               var r=eval( document.getElementById('res').value);
+               document.getElementById('res').value = r;
+            }
+        </script>
+    </head>
+    <body style="background-color: black;">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <center>
+        <h2 style="color: cornsilk;">Simple Calculator</h2>
+        </center>
+        <table align='center'>
+            <tr><td colspan="4">
+                <input id='res' value="" type='text'>
+            </td></tr>
+            <tr>
+                <td><button onclick="insert('7')">7</button></td>
+                <td><button onclick="insert('8')">8</button></td>
+                <td><button onclick="insert('9')">9</button></td>
+                <td><button onclick="insert(' * ')">*</button></td>
+            </tr>
+            <tr>
+                
+                <td><button onclick="insert('4')">4</button></td>
+                <td><button onclick="insert('5')">5</button></td>
+                <td><button onclick="insert('6')">6</button></td>
+                <td><button onclick="insert(' + ')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="insert('1')">1</button></td>
+                <td><button onclick="insert('2')">2</button></td>
+                <td><button onclick="insert('3')">3</button></td>
+                <td><button onclick="insert(' - ')">-</button></td>
+            </tr>
+            
+            <tr>
+                <td ><button onclick="clr()">clr</button></td>
+                <td><button onclick="insert('0')">0</button></td>
+                <td colspan="1"><button onclick="result()">=</button></td>
+                <td ><button>/</button></td>
+            </tr>
+            
+        </table>
+
+        <script src="" async defer></script>
+    </body>
+</html>
