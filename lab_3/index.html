@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>3 Lab Program</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    <script> 
+        var fs=5;
+        var flag = 'i';
+        var opt='i';
+        function textAnimate(){
+        
+        
+        if(opt == 'i') {
+        
+        var timer=setInterval(animate,100)
+        function animate(){
+            fs += 5;
+            document.getElementById('text').style.fontSize= fs + "pt";
+            document.getElementById('text').style.color='red';
+            document.getElementById('text').innerText="This text is growing";
+            
+            if(fs==50)
+            clearInterval(timer);
+        }
+        }
+        if(opt == 'd') {
+        
+        var timer=setInterval(animate,100)
+        function animate(){
+            fs -= 5;
+            document.getElementById('text').style.fontSize= fs + "pt";
+            document.getElementById('text').style.color='blue';
+            document.getElementById('text').innerText="This text is shrinking";
+            if(fs==15)
+            clearInterval(timer);
+        }
+        }
+        if(flag=='i')
+        {
+            flag='d';
+            opt = 'd';
+        }
+        else{
+            flag='i';
+            opt = 'i';
+        }
+    }
+    </script>
+    </head>
+    <body>
+    <center>
+        <h1> 3 Lab Program </h1>
+        <h2> Program to increase font size</h2>
+        <button onclick="textAnimate()">Increase / Decrease</button> &nbsp;
+       <br>
+        <p id="text" style="color: blue;font-weight: bold;font-size: 15pt;">This is the text!!</p>
+    </center>
+       </body>
+</html>
